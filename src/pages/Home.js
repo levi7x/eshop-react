@@ -1,21 +1,28 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductList from "../components/products/ProductList";
+import useAuth from "../hooks/useAuth";
+import Loader from "../components/ui/Loader";
 
 function HomePage() {
   const [productArray, setProductArray] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const {auth} = useAuth();
 
   useEffect(() => {
+    setIsLoading(true);
     (async () => {
-        const { data } = await axios.get('https://localhost:7257/api/Product');
+        const { data } = await axios.get('Product');
         setProductArray(data);
-        console.log({ data });
+        setIsLoading(false);
     })();
 }, []);
 
   return (
     <section>
-      <h1>Products</h1>
+      <h1>Products {auth?.userName}</h1>
+      {isLoading && <Loader />}
       <ProductList products={productArray} />
     </section>
   );

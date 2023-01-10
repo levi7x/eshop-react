@@ -11,12 +11,14 @@ const useRefreshToken = () => {
             {},
             { withCredentials: true });
         const role = jwtDecode(response.data)["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-        const user = jwtDecode(response.data)["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
+        const userName = jwtDecode(response.data)["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
         const roles = [];
         const accessToken = response.data;
         roles.push(role);
         
-        setAuth({ user, roles, accessToken });
+        axios.defaults.headers.common["Authorization"] = `Bearer ${response.data}`;
+
+        setAuth({ userName, roles, accessToken });
 
         return accessToken;
     }

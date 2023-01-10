@@ -1,0 +1,12 @@
+.cart{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 55px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.cart:hover {
+    box-shadow: 0 0 4px 4px rgba(161, 223, 213, 0.5);
+    cursor: pointer;
+  }
