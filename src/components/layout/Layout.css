@@ -4,8 +4,14 @@
     box-sizing: border-box;
 }
 
+.body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 .footer{
+    margin-top: auto;
     padding: 40px 0;
     background: rgb(93,34,195);
     background: linear-gradient(0deg, rgba(93,34,195,1) 0%, rgba(45,253,226,1) 100%);
