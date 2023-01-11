@@ -1,13 +1,20 @@
+import Footer from "./Footer";
 import MainNavigation from "./MainNavigation";
+import "./Layout.css"
 
 function Layout(props) {
   return (
-    <>
-      <div>
+    <body>
+      <nav>
         <MainNavigation />
+      </nav>
+      <div className="content">
+        <main className="main">{props.children}</main>
       </div>
-      <main>{props.children}</main>
-    </>
+      <footer className="footer">
+        <Footer />
+      </footer>
+    </body>
   );
 }
 
