@@ -5,12 +5,10 @@ import "./Layout.css";
 function Layout(props) {
   return (
     <body className="body">
-      <header>
+      <header className="header">
         <MainNavigation />
       </header>
-      <div className="content">
-        <main className="main">{props.children}</main>
-      </div>
+        <main>{props.children}</main>
       <footer className="footer">
         <Footer />
       </footer>

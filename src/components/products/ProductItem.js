@@ -28,20 +28,22 @@ function ProductItem(props) {
   }
 
   return (
-      <Card>
-        <div>
-          <img src={props.image} alt={props.name}/>
-        </div>
-        <div>
-          <h3>{props.name}</h3>
-          <p className={classes.price}>{props.price} $</p>
-          <p>{props.description}</p>
-          <p>{props.stock}</p>
-          <button onClick={toCart} className={classes.btn}>Add to cart</button>
-        </div>
-        {modalIsOpen && <Modal onCancel={closeModalHandler}/>}
-        {modalIsOpen && <Backdrop onCancel={closeModalHandler}/>}
-      </Card>
+    <>
+    {modalIsOpen && <Modal onCancel={closeModalHandler} />}
+    {modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
+    
+    <Card>
+      <div className={classes.product}>
+        <img className={classes.img} src={props.image} alt={props.name} />
+        <p className={classes.name}>{props.name}</p>
+        <p className={classes.price}>{props.price} $</p>
+        <p className={classes.stock}>{props.stock} in stock</p>
+        <button onClick={toCart} className={classes.btn}>
+          Add to cart
+        </button>
+      </div>
+    </Card>
+    </>
   );
 }
 

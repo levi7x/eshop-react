@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+}
+
+.sidebar{
+    margin-top: 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+.home-content{
+    display: flex;
+}
+
+.product-list{
+    width: 100%;
+    margin-right: 20px;
+}

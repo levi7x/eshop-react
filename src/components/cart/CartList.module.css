@@ -1,0 +1,8 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    direction: ltr;
+    max-height: 420px;
+    
+}

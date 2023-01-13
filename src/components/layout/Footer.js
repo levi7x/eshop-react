@@ -5,10 +5,10 @@ function Footer() {
     <>
       <div className="social">
         <a href="#">
-          <i className="fab fa-instagram"></i>
+          <i className="fab fa-github"></i>
         </a>
         <a href="#">
-          <i className="fab fa-snapchat"></i>
+          <i className="fab fa-linkedin"></i>
         </a>
         <a href="#">
           <i className="fab fa-twitter"></i>

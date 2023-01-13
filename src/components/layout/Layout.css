@@ -8,13 +8,15 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: rgb(237, 240, 242);
 }
 
 .footer{
     margin-top: auto;
     padding: 40px 0;
-    background: rgb(93,34,195);
-    background: linear-gradient(0deg, rgba(93,34,195,1) 0%, rgba(45,253,226,1) 100%);
+    background: rgb(50, 25, 141);
+    background: linear-gradient(0deg, rgb(95, 103, 131) 0%, rgb(237, 240, 242) 100%);
     opacity: 0.95;
 }
+
 

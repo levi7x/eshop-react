@@ -1,6 +1,6 @@
 function Unauthorized(){
     return <div>
-        <h1>403 FORBIDDEN</h1>
+        <h1 className="err">FORBIDDEN 403</h1>
     </div>
 }
 
