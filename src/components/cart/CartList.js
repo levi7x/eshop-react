@@ -1,8 +1,9 @@
 import CartItem from "./CartItem";
+import classes from "./CartList.module.css"
 
 function CartList(props) {
   return (
-    <ul>
+    <ul className={classes.content}>
       {props.items.map((item) => (
         <CartItem
           key={item.id}
