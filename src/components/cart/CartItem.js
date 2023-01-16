@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import NumSpinner from "../ui/NumSpinner";
 import classes from "./CartItem.module.css";
 
 function CartItem(props) {
@@ -20,6 +21,7 @@ function CartItem(props) {
   const increaseHandler = async () => {
     try {
       disableButtons();
+      console.log('PLUS');
       await axios.post("/Order/cart/" + props.id);
       props.onChange(props.pieces);
     } catch (err) {
@@ -30,6 +32,7 @@ function CartItem(props) {
 
   const decreaseHandler = async () => {
     try {
+      console.log('MINUS');
       disableButtons();
       await axios.delete("/Order/cart/" + props.id);
       props.onChange(props.pieces);
@@ -69,10 +72,13 @@ function CartItem(props) {
         <p>{props.stock} available</p>
       </div>
       <div className={classes.btns} id="btn-container">
-        <p>{props.pieces}</p>
+{/*         <p>{props.pieces}</p>
         <button onClick={increaseHandler}>+</button>
-        <button onClick={decreaseHandler}>-</button>
-        <button onClick={removeItemHandler}>X</button>
+        <button onClick={decreaseHandler}>-</button> */}
+        <NumSpinner value={props.pieces} increase={increaseHandler} decrease={decreaseHandler} />
+      </div>
+      <div className={classes.trash}>
+      <i className="fa-solid fa-trash-can" onClick={removeItemHandler}></i>
       </div>
     </div>
   );

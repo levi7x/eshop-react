@@ -1,0 +1,79 @@
+.acc-container{
+    display: flex;
+    justify-content: center;
+}
+
+.acc-content{
+    display: flex;
+    width: 900px;
+    height: 100vh;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin: 15px 0 15px;
+}
+
+.acc-sidebar{
+    margin-top: 10px;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    width: 240px;
+    height: 97%;
+    flex-direction: column;
+    border: 1px solid green;
+}
+
+.acc-info{
+    margin: 10px 10px;
+    border: 1px solid red;
+    width: 100%;
+}
+
+
+.sections{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(33, 0, 84);
+}
+
+.sections hr{
+    margin: 0 4px;
+}
+
+.overview{
+margin-left: 1.3rem;
+}
+
+.ovw-info{
+    display: grid;
+}
+
+.order-cards{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px;
+}
+
+
+.order-cards {
+    margin: 16px;
+    text-align: center;
+    caret-color: transparent;
+    cursor: pointer;
+}
+
+.order-cards i{
+    margin-top: 30%;
+    font-size: 34px;
+    
+    
+}
+.order-cards label{
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 30%;
+    margin-bottom: -30%;
+    
+
+}

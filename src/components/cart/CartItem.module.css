@@ -5,21 +5,21 @@
 
 .name {
   display: flex;
-  flex-basis: 240px;
+  flex-basis: 260px;
   align-items: center;
 }
 
 .price {
   display: flex;
   align-items: center;
-  flex-basis: 100px;
+  flex-basis: 95px;
   font-style: italic;
   font-size: 1.5rem;
 }
 
 .stock{
   display: flex;
-  flex-basis: 75px;
+  flex-basis: 60px;
   align-items: center;
   font-style: italic;
   font-size: 1.2rem;
@@ -27,7 +27,22 @@
 }
 
 .btns {
-  flex-basis: 122px;
+  flex-basis: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  caret-color: transparent;
+  outline: none;
+}
+
+.trash{
+  display: flex;
+  flex-basis: 30px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  margin: 2px 8px;
+  caret-color: transparent;
 }
 
 .cartitem {

@@ -3,9 +3,10 @@
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition-property: transform;
+    transition-property: transform, box-shadow;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
+    caret-color: transparent;
   }
 
 .card:hover{
@@ -15,4 +16,5 @@
   transition-duration: 0.4s;
   box-shadow: 0 4px 16px rgba(28, 37, 126, 0.7);
   cursor: pointer;
+  caret-color: transparent;
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CartList from "../components/cart/CartList";
 import Loader from "../components/ui/Loader";
 import "./Cart.css";
@@ -7,26 +8,27 @@ import "./Cart.css";
 function Cart() {
   const [cartContent, setCartContent] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [amount, setAmount] = useState();
+  const [flag, setFlag] = useState(false);
+  const navigate = useNavigate();
 
-  const handleAmountChange = (newAmount) => {
-    setAmount(newAmount);
+  const handleAmountChange = () => {
+    setFlag(!flag);
   };
 
   useEffect(() => {
     setIsLoading(true);
-    console.log("RENDERING " + amount);
+    console.log("RENDERING " + flag);
     (async () => {
       const { data } = await axios.get("Order/cart/content");
       setCartContent(data);
     })();
     setIsLoading(false);
-  }, [amount]);
+  }, [flag]);
 
   const totalAmount = () => {
     return cartContent
       .map((item) => item.price * item.pieces)
-      .reduce((a, b) => a + b);
+      .reduce((a, b) => a + b).toFixed(2);
   };
 
   let content;
@@ -37,6 +39,14 @@ function Cart() {
   } else if (cartContent) {
     total = totalAmount();
     content = <CartList items={cartContent} onChange={handleAmountChange} />;
+  }
+
+  const backToShopHandler = () =>{
+        navigate("/");
+  }
+
+  const continueToShopHandler = () =>{
+    navigate("/")
   }
 
   return (
@@ -54,8 +64,8 @@ function Cart() {
         <div className="cart-bottom">
           <div className="flex-amount">Total amount {total} $</div>
           <div className="flex-btns">
-            <button className="btn-shop">BACK TO SHOPPING</button>
-            <button className="btn-cnt">CONTINUE TO PAY</button>
+            <button className="btn-shop" onClick={backToShopHandler}>BACK TO SHOPPING</button>
+            <button className="btn-cnt" onClick={continueToShopHandler}>CONTINUE TO PAY</button>
           </div>
         </div>
       </div>

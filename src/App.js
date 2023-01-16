@@ -29,7 +29,7 @@ function App() {
 
           <Route element={<RequireAuth allowedRoles={['User']} />}>
           <Route path="/cart" element={<Cart/>} />
-          <Route path="/profile" element={<AccountPage />} />
+          <Route path="/account" element={<AccountPage />} />
           </Route>
       
           <Route path="/unauthorized" element={<Unauthorized />} />

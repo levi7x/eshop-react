@@ -4,5 +4,6 @@
     overflow-y: auto;
     direction: ltr;
     max-height: 420px;
+    caret-color: transparent;
     
 }
