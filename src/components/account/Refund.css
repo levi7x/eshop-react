@@ -1,0 +1,29 @@
+.order-form{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.refund-container{
+    caret-color: transparent;
+    margin-top: 16px;
+    margin-bottom: 48px;
+}
+
+.order-form input{
+    caret-color: auto;
+    border-radius: 10px;
+    border: 2px solid rgb(69, 55, 55);
+    height: 2.3rem;
+}
+.search-btn{
+    border-radius: 40%;
+}
+.order-listing{
+    width: 100%;
+}
+
+.listing-result{
+    text-align: center;
+    font-style: italic;
+}
